@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Tokyo - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="left-decoration">
+        <img src="images/fruit_bg.png" alt="Fruits Background" class="fruit-image">
+    </div>
+    
+    <div class="container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="images/logo.png" alt="Firebase Tokyo Logo">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label-top">Sign in as</label>
+                <select id="userTypeSpinner" class="form-input">
+                    <option value="" disabled selected>Select your role </option>
+                    <option value="Manager">Manager</option>
+                    <option value="Supplier">Supplier</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label-top">Email</label>
+                <div class="form-input-container">
+                    <input type="text" id="emailInput" class="form-input" placeholder="Enter your email" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label-top">Password</label>
+                <div class="form-input-container">
+                    <input type="password" id="passwordInput" class="form-input" placeholder="Enter your password" required>
+                </div>
+            </div>
+
+            <button id="loginButton" class="login-button">Log In</button>
+
+            <div class="divider">
+                <div class="line"></div>
+                <div class="or">OR</div>
+                <div class="line"></div>
+            </div>
+
+            <div class="forgot-password">
+                <a href="#">Forgot password?</a>
+            </div>
+        </div>
+
+        <div class="signup-box">
+            <p>Don't have an account? <a href="#" id="contactAdmin">Contact admin!</a></p>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Admin</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label class="form-label-top">Name</label>
+                    <input type="text" id="nameInput" class="form-input" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label-top">Email</label>
+                    <input type="email" id="contactEmail" class="form-input" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label-top">Message</label>
+                    <textarea id="messageInput" class="form-input" placeholder="Type your message here" required></textarea>
+                </div>
+                <button type="submit" class="login-button">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
