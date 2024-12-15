@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firebase Tokyo - Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shared/css/common.css">
 </head>
 <body>
     <div class="left-decoration">
-        <img src="images/fruit_bg.png" alt="Fruits Background" class="fruit-image">
+        <img src="shared/images/fruit_bg.png" alt="Fruits Background" class="fruit-image">
     </div>
     
     <div class="container">
         <div class="login-box">
             <div class="logo">
-                <img src="images/logo.png" alt="Firebase Tokyo Logo">
+                <img src="shared/images/logo.png" alt="Firebase Tokyo Logo">
             </div>
             
             <div class="form-group">
                 <label class="form-label-top">Sign in as</label>
                 <select id="userTypeSpinner" class="form-input">
-                    <option value="" disabled selected>Select your role </option>
+                    <option value="" disabled selected>Choose your role type</option>
                     <option value="Manager">Manager</option>
                     <option value="Supplier">Supplier</option>
                 </select>
@@ -79,6 +79,6 @@
             </form>
         </div>
     </div>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="shared/js/app.js"></script>
 </body>
 </html>
