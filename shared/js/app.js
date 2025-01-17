@@ -16,85 +16,87 @@ const auth = getAuth();
 const db = getFirestore();
 
 // DOM Elements
-const userTypeSpinner = document.getElementById('userTypeSpinner');
-const emailInput = document.getElementById('emailInput');
-const passwordInput = document.getElementById('passwordInput');
-const loginButton = document.getElementById('loginButton');
-const modal = document.getElementById('contactModal');
-const contactAdmin = document.getElementById('contactAdmin');
-const closeBtn = document.getElementsByClassName('close')[0];
-const contactForm = document.getElementById('contactForm');
+document.addEventListener('DOMContentLoaded', () => {
+    const loginButton = document.getElementById('loginButton');
+    const contactAdmin = document.getElementById('contactAdmin');
+    const modal = document.getElementById('contactModal');
+    const closeBtn = document.getElementsByClassName('close')[0];
+    const contactForm = document.getElementById('contactForm');
 
-// Add floating label effect
-const inputs = document.querySelectorAll('.form-input');
-inputs.forEach(input => {
-    input.addEventListener('input', () => {
-        if (input.value) {
-            input.classList.add('has-value');
-        } else {
-            input.classList.remove('has-value');
+    // Login Handler
+    loginButton.addEventListener('click', function() {
+        const userType = document.getElementById('userTypeSpinner').value;
+        const email = document.getElementById('emailInput').value;
+        const password = document.getElementById('passwordInput').value;
+
+        // Basic validation
+        if (!email || !password || !userType) {
+            alert('Please fill in all fields');
+            return;
         }
+
+        // Authentication logic
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                
+                // Redirect based on user type
+                if (userType === 'Manager') {
+                    window.location.href = 'manager/home.html';
+                } else if (userType === 'Supplier') {
+                    if (email === 'supplier1@email.com') {
+                        window.location.href = 'supplier1/home.html';
+                    } else if (email === 'supplier2@email.com') {
+                        window.location.href = 'supplier2/home.html';
+                    }
+                }
+            })
+            .catch((error) => {
+                alert('Invalid credentials. Please try again.');
+                console.error(error.message);
+            });
     });
-});
 
-// Login functionality
-loginButton.addEventListener('click', async () => {
-    const selectedRole = userTypeSpinner.value;
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    if (!selectedRole || !email || !password) {
-        alert('Please fill in all fields');
-        return;
+    // Modal Handlers
+    contactAdmin.onclick = () => {
+        modal.style.display = "block";
     }
 
-    try {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        if (selectedRole === 'Manager') {
-            window.location.href = 'manager.html';
-        } else {
-            window.location.href = 'supplier.html';
+    closeBtn.onclick = () => {
+        modal.style.display = "none";
+    }
+
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
-    } catch (error) {
-        alert('Invalid credentials');
+    }
+
+    // Contact Form Handler
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('nameInput').value;
+        const email = document.getElementById('contactEmail').value;
+        const message = document.getElementById('messageInput').value;
+
+        // Here you can add logic to send the contact form data
+        console.log('Contact Form Submitted:', { name, email, message });
+        
+        // Clear form and close modal
+        contactForm.reset();
+        modal.style.display = "none";
+        alert('Message sent successfully!');
+    });
+
+    // Password visibility toggle
+    const togglePassword = document.querySelector('.toggle-password');
+    const passwordInput = document.getElementById('passwordInput');
+
+    if (togglePassword) {
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            togglePassword.classList.toggle('show');
+        });
     }
 });
-
-// Modal functionality
-contactAdmin.onclick = function() {
-    modal.style.display = "block";
-}
-
-closeBtn.onclick = function() {
-    modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-// Contact form submission
-contactForm.onsubmit = async function(e) {
-    e.preventDefault();
-    const name = document.getElementById('nameInput').value;
-    const email = document.getElementById('contactEmail').value;
-    const message = document.getElementById('messageInput').value;
-    
-    try {
-        await addDoc(collection(db, "contactRequests"), {
-            name: name,
-            email: email,
-            message: message,
-            timestamp: new Date(),
-            status: "pending"
-        });
-        
-        alert('Your message has been sent to the admin. We will contact you soon!');
-        modal.style.display = "none";
-        contactForm.reset();
-    } catch (error) {
-        alert('Error sending message. Please try again.');
-    }
-}

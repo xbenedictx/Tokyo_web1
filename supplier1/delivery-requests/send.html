@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Delivery - Supplier 1</title>
+    <link rel="stylesheet" href="../../shared/css/common.css">
+    <link rel="stylesheet" href="../css/supplier1-styles.css">
+</head>
+<body>
+    <nav class="supplier-nav">
+        <!-- Same navigation structure as home.html -->
+    </nav>
+
+    <div class="delivery-form-container">
+        <h1>Create Delivery Request</h1>
+        <form id="deliveryForm">
+            <div class="form-group">
+                <label>Select Items</label>
+                <select multiple class="form-input">
+                    <option>Carrots - 10kg</option>
+                    <option>Cabbage - 5kg</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Delivery Date</label>
+                <input type="date" class="form-input">
+            </div>
+            <button type="submit" class="action-button">Send Request</button>
+        </form>
+    </div>
+</body>
+</html>

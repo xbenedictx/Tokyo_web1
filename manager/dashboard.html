@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard - Firebase Tokyo</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="stylesheet" href="css/manager-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="supplier.html">Suppliers</a></li>
+        </ul>
+    </nav>
+
+    <div class="dashboard-container">
+        <header class="welcome-banner">
+            <h1>Welcome to Manager Dashboard</h1>
+            <p>Overview of restaurant operations and inventory</p>
+        </header>
+        
+        <div class="dashboard-grid">
+            <!-- Quick Stats Section -->
+            <div class="stats-card">
+                <h2><i class="fas fa-chart-line"></i> Quick Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Inventory Items</span>
+                        <span class="stat-value">156</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Low Stock Items</span>
+                        <span class="stat-value alert">12</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Pending Orders</span>
+                        <span class="stat-value">5</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Active Suppliers</span>
+                        <span class="stat-value">2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activities Section -->
+            <div class="activities-card">
+                <h2><i class="fas fa-clock"></i> Recent Activities</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <i class="fas fa-truck"></i>
+                        <div class="activity-details">
+                            <p>New delivery from Fresh Veggies Co.</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div class="activity-details">
+                            <p>Low stock alert: Carrots</p>
+                            <span class="activity-time">3 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory Status Section -->
+            <div class="inventory-card">
+                <h2><i class="fas fa-box"></i> Inventory Status</h2>
+                <div class="inventory-list">
+                    <div class="inventory-item low-stock">
+                        <span class="item-name">Carrots</span>
+                        <span class="item-quantity">5 kg</span>
+                        <span class="status-badge warning">Low Stock</span>
+                    </div>
+                    <div class="inventory-item">
+                        <span class="item-name">Cabbage</span>
+                        <span class="item-quantity">20 kg</span>
+                        <span class="status-badge normal">Normal</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Supplier Updates Section -->
+            <div class="supplier-updates-card">
+                <h2><i class="fas fa-users"></i> Supplier Updates</h2>
+                <div class="supplier-list">
+                    <div class="supplier-item">
+                        <div class="supplier-info">
+                            <h3>Fresh Veggies Co.</h3>
+                            <p>Last Delivery: Oct 15, 2023</p>
+                        </div>
+                        <button class="action-button">View Details</button>
+                    </div>
+                    <div class="supplier-item">
+                        <div class="supplier-info">
+                            <h3>Seafood Supplier Co.</h3>
+                            <p>Last Delivery: Oct 14, 2023</p>
+                        </div>
+                        <button class="action-button">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../shared/js/manager.js"></script>
+</body>
+</html>

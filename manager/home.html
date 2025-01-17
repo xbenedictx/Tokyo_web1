@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard - Firebase Tokyo</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="stylesheet" href="css/manager-styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="supplier.html">Suppliers</a></li>
+        </ul>
+    </nav>
+
+    <div class="dashboard-container">
+        <header class="welcome-banner">
+            <h1>Welcome, Manager!</h1>
+        </header>
+        
+        <div class="dashboard-grid">
+            <div class="report-card">
+                <h2>Inventory Report</h2>
+                <div class="inventory-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Items</span>
+                        <span class="stat-value">156</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Low Stock Items</span>
+                        <span class="stat-value alert">12</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shipments-card">
+                <div class="card-header">
+                    <h2>Recent Shipments</h2>
+                    <a href="#" class="show-all">Show All</a>
+                </div>
+                <div class="shipments-list">
+                    <div class="shipment-item">
+                        <span class="date">Oct 15, 2023</span>
+                        <span class="supplier">Fresh Veggies Co.</span>
+                        <span class="status status-delivered">Delivered</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../shared/js/manager.js"></script>
+</body>
+</html>

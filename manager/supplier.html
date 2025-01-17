@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier Management - Firebase Tokyo</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="stylesheet" href="css/manager-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="supplier.html" class="active">Suppliers</a></li>
+        </ul>
+    </nav>
+
+    <div class="supplier-container">
+        <h1>Supplier Management</h1>
+        
+        <!-- Search and Filter Section -->
+        <div class="supplier-controls">
+            <div class="search-box">
+                <input type="text" placeholder="Search suppliers..." class="search-input">
+                <button class="search-button">Search</button>
+            </div>
+            <div class="filter-options">
+                <select class="filter-select">
+                    <option value="all">All Types</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="seafood">Seafood</option>
+                </select>
+            </div>
+            <button class="add-supplier-btn">Add New Supplier</button>
+        </div>
+
+        <div class="supplier-grid">
+            <!-- Supplier 1 Card -->
+            <div class="supplier-card">
+                <div class="supplier-header">
+                    <h3>Fresh Veggies Co.</h3>
+                    <span class="status-badge active">Active</span>
+                </div>
+                <div class="supplier-details">
+                    <p><i class="fas fa-user"></i> Contact: John Doe</p>
+                    <p><i class="fas fa-envelope"></i> Email: john@freshveggies.com</p>
+                    <p><i class="fas fa-phone"></i> Phone: +63 912 XXX XXXX</p>
+                    <p><i class="fas fa-tag"></i> Type: Vegetable Supplier</p>
+                    <p><i class="fas fa-map-marker"></i> Location: Makati City, Metro Manila</p>
+                </div>
+                <div class="supplier-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Orders</span>
+                        <span class="stat-value">156</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">On-time Delivery</span>
+                        <span class="stat-value">98%</span>
+                    </div>
+                </div>
+                <div class="supplier-actions">
+                    <button class="action-button view-orders">View Orders</button>
+                    <button class="action-button contact">Contact</button>
+                    <button class="action-button edit">Edit</button>
+                </div>
+            </div>
+
+            <!-- Supplier 2 Card -->
+            <div class="supplier-card">
+                <div class="supplier-header">
+                    <h3>Seafood Supplier Co.</h3>
+                    <span class="status-badge active">Active</span>
+                </div>
+                <div class="supplier-details">
+                    <p><i class="fas fa-user"></i> Contact: Jane Smith</p>
+                    <p><i class="fas fa-envelope"></i> Email: jane@seafoodsupplier.com</p>
+                    <p><i class="fas fa-phone"></i> Phone: 0912 XXX XXXX</p>
+                    <p><i class="fas fa-tag"></i> Type: Seafood Supplier</p>
+                    <p><i class="fas fa-map-marker"></i> Location: Pasig City, Metro Manila</p>
+                </div>
+                <div class="supplier-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Orders</span>
+                        <span class="stat-value">142</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">On-time Delivery</span>
+                        <span class="stat-value">95%</span>
+                    </div>
+                </div>
+                <div class="supplier-actions">
+                    <button class="action-button view-orders">View Orders</button>
+                    <button class="action-button contact">Contact</button>
+                    <button class="action-button edit">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Supplier Modal -->
+    <div id="supplierModal" class="modal">
+        <div class="modal-content">
+            <h2>Add/Edit Supplier</h2>
+            <form id="supplierForm">
+                <div class="form-group">
+                    <label>Company Name</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Contact Person</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" class="form-input" placeholder="+63 9XX XXX XXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="action-button">Save</button>
+                    <button type="button" class="action-button cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../shared/js/manager.js"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+</body>
+</html>

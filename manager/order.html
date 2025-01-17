@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management - Firebase Tokyo</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="stylesheet" href="css/manager-styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="order.html" class="active">Order</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="supplier.html">Suppliers</a></li>
+        </ul>
+    </nav>
+
+    <div class="order-container">
+        <h1>Order Management</h1>
+        <div class="order-grid">
+            <div class="new-order-form">
+                <h2>Create New Order</h2>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label>Select Supplier</label>
+                        <select class="form-input">
+                            <option>Fresh Veggies Co.</option>
+                            <option>Seafood Supplier</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Items</label>
+                        <select multiple class="form-input">
+                            <option>Carrots - 10kg</option>
+                            <option>Cabbage - 5kg</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="action-button">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
