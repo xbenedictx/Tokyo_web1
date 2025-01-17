@@ -15,7 +15,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
 
-// DOM Elements
 document.addEventListener('DOMContentLoaded', () => {
     const loginButton = document.getElementById('loginButton');
     const contactAdmin = document.getElementById('contactAdmin');
@@ -23,31 +22,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementsByClassName('close')[0];
     const contactForm = document.getElementById('contactForm');
 
-    // Login Handler
     loginButton.addEventListener('click', function() {
         const userType = document.getElementById('userTypeSpinner').value;
         const email = document.getElementById('emailInput').value;
         const password = document.getElementById('passwordInput').value;
 
-        // Basic validation
         if (!email || !password || !userType) {
             alert('Please fill in all fields');
             return;
         }
 
-        // Authentication logic
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 
-                // Redirect based on user type
                 if (userType === 'Manager') {
-                    window.location.href = 'manager/home.html';
+                    window.location.href = '/manager/home.html';
                 } else if (userType === 'Supplier') {
-                    if (email === 'supplier1@email.com') {
-                        window.location.href = 'supplier1/home.html';
-                    } else if (email === 'supplier2@email.com') {
-                        window.location.href = 'supplier2/home.html';
+                    const supplierRoutes = {
+                        'elevazobenedict@gmail.com': '/supplier1/home.html',
+                        'supplier2@tokyowebapp.com': '/supplier2/home.html',
+                        'supplier3@tokyowebapp.com': '/supplier3/home.html'
+                    };
+                    
+                    const redirectPath = supplierRoutes[email];
+                    if (redirectPath) {
+                        window.location.href = redirectPath;
+                    } else {
+                        console.log('Login attempt:', email);
+                        alert('Please check your email and try again');
                     }
                 }
             })
@@ -57,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     });
 
-    // Modal Handlers
     contactAdmin.onclick = () => {
         modal.style.display = "block";
     }
@@ -72,23 +74,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Contact Form Handler
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = document.getElementById('nameInput').value;
         const email = document.getElementById('contactEmail').value;
         const message = document.getElementById('messageInput').value;
 
-        // Here you can add logic to send the contact form data
         console.log('Contact Form Submitted:', { name, email, message });
         
-        // Clear form and close modal
         contactForm.reset();
         modal.style.display = "none";
         alert('Message sent successfully!');
     });
 
-    // Password visibility toggle
     const togglePassword = document.querySelector('.toggle-password');
     const passwordInput = document.getElementById('passwordInput');
 
