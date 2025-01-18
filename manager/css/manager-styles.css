@@ -1,5 +1,5 @@
 /* Main Navigation */
-.main-nav {
+/* .main-nav {
     background: white;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -33,7 +33,7 @@
 .main-nav a.active {
     background: #0095f6;
     color: white;
-}
+} */
 
 /* Dashboard Layout */
 .dashboard-container {
@@ -48,7 +48,7 @@
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* Dashboard Grid */
@@ -59,13 +59,13 @@
 }
 
 /* Cards */
-.report-card, 
+.report-card,
 .shipments-card,
 .stock-card {
     background: white;
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* Stock Management */
@@ -90,7 +90,7 @@
     border-radius: 15px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -192,8 +192,15 @@
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Design */
@@ -202,11 +209,11 @@
         flex-direction: column;
         align-items: center;
     }
-    
+
     .dashboard-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .ingredient-card {
         margin-bottom: 20px;
     }

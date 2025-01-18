@@ -1,0 +1,185 @@
+@import url('https://fonts.cdnfonts.com/css/switzer');
+
+:root {
+    --base-clr: white;
+    --line-clr: #535353;
+    --hover-clr: #d5d5d5;
+    --text-clr: #141C24;
+    --accent-clr: #DC242C;
+    --secondary-text-clr: #989898;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html {
+    font-family: Switzer, sans-serif;
+    line-height: 1.5rem;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--base-clr);
+    color: var(--text-clr);
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+}
+
+.contentWrapper {
+    grid-column: 2;
+    position: relative;
+}
+
+/* Top navbar */
+#topNavBar {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    /* Equivalent to match-parent in AS */
+    width: 100%;
+    height: 60px;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    font-family: Switzer-semibold, sans-serif;
+    font-size: 18;
+    font-weight: 600;
+    /* border-bottom: 1px solid var(--line-clr); ugly as shit */
+}
+
+
+#topNavBar #logo {
+    width: 20%;
+    height: 100%;
+    padding: 15px 17px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#topNavBar #logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 100%;
+}
+
+#topNavBar #topMenu {
+    width: calc(100% - 70px);
+    height: 100%;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#topMenu a:hover {
+    background-color: var(--hover-clr);
+}
+
+#topMenu ul {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Responsible for giving rounded bg corners when hovering over the list items*/
+#topMenu ul li a {
+    text-decoration: none;
+    color: var(--text-clr);
+    border-radius: .5em;
+    padding: .3em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+
+
+/* Sidebar */
+#sideNavBar {
+    background-color: white;
+    grid-column: 1;
+    box-sizing: border-box;
+    height: 100vh;
+    width: auto;
+    padding: 5px 1em;
+    /* border-right: 1px solid var(--line-clr); */
+    position: sticky;
+    top: 0;
+    align-self: start;
+    align-items: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+}
+
+#sideNavBar>ul>li:first-child {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+
+    .logo {
+        font-weight: 600;
+    }
+}
+
+#sideNavBar ul li.active a {
+    color: var(--accent-clr);
+
+    svg {
+        fill: var(--accent-clr);
+        stroke: var(--accent-clr);
+    }
+}
+
+#sideNavBar a {
+    border-radius: .5em;
+    padding: .85em;
+    text-decoration: none;
+    color: var(var(--text-clr));
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#sideNavBar svg {
+    flex-shrink: 0;
+    fill: white
+}
+
+
+#sideNavBar a:hover {
+    background-color: var(--hover-clr);
+    /* color: var(--base-clr); */
+}
+
+
+/* For the collapsible sidebar */
+#toggleBtn {
+    margin-left: auto;
+    padding: 1em;
+    border: none;
+    border-radius: .5em;
+    background: none;
+    cursor: pointer;
+}
+
+#toggleBtn:hover {
+    background-color: var(--hover-clr);
+}
+
+/* 
+#sideNavBar a span {
+    flex-grow: 1;
+} */
