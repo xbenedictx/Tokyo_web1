@@ -53,87 +53,61 @@
 
 /* Dashboard Grid */
 .dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 20px;
+}
+
+.top-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.bottom-row {
+    width: 100%;
 }
 
 /* Cards */
 .report-card,
-.shipments-card,
-.stock-card {
+.orders-card,
+.shipments-card {
     background: white;
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Stock Management */
-.stock-container {
-    max-width: 1200px;
-    margin: 80px auto 40px;
-    padding: 20px;
-}
-
-.ingredients-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.category-section {
-    margin-bottom: 40px;
-}
-
-.ingredient-card {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.ingredient-card:hover {
-    transform: translateY(-5px);
-}
-
-.ingredient-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-/* Statistics */
-.stat-item {
+/* Card Headers */
+.card-header {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
-    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.stat-label {
-    color: #666;
+/* Tables */
+.inventory-table,
+.orders-table,
+.shipments-table {
+    width: 100%;
+    overflow-x: auto;
 }
 
-.stat-value {
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th {
+    background: #f8f9fa;
+    padding: 15px;
+    text-align: left;
     font-weight: 600;
 }
 
-.stat-value.alert {
-    color: #dc3545;
-}
-
-/* Shipments List */
-.shipments-list {
-    margin-top: 20px;
-}
-
-.shipment-item {
-    display: flex;
-    justify-content: space-between;
+td {
     padding: 15px;
     border-bottom: 1px solid #f0f0f0;
 }
@@ -146,9 +120,19 @@
     font-weight: 500;
 }
 
-.status-delivered {
+.status-done {
     background: #d4edda;
     color: #155724;
+}
+
+.status-restock {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-transit {
+    background: #cce5ff;
+    color: #004085;
 }
 
 .status-pending {
@@ -156,38 +140,33 @@
     color: #856404;
 }
 
-/* Forms */
-.form-group {
-    margin-bottom: 20px;
+/* Controls */
+.shipment-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
 
-.form-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.form-input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #dbdbdb;
+select {
+    padding: 8px 16px;
     border-radius: 8px;
-    font-size: 16px;
+    border: 1px solid #dbdbdb;
+    background: white;
+    min-width: 120px;
 }
 
-/* Buttons */
-.action-button {
-    background: #0095f6;
+.show-all {
+    background: #DC242C;
     color: white;
-    padding: 12px 24px;
+    padding: 8px 16px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
-.action-button:hover {
-    background: #0086e6;
+.show-all:hover {
+    background: #b81e25;
 }
 
 /* Animations */
@@ -196,7 +175,6 @@
         opacity: 0;
         transform: translateY(-10px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -204,17 +182,19 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .main-nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .dashboard-grid {
+@media (max-width: 1200px) {
+    .top-row {
         grid-template-columns: 1fr;
     }
+}
 
-    .ingredient-card {
-        margin-bottom: 20px;
+@media (max-width: 768px) {
+    .dashboard-container {
+        margin: 60px auto 30px;
+    }
+    
+    .shipment-controls {
+        flex-direction: column;
+        align-items: stretch;
     }
 }

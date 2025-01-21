@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +8,10 @@
     <link rel="stylesheet" href="css/manager-styles.css">
     <link rel="stylesheet" href="../shared/css/navbar.css">
 </head>
-
 <body>
-
     <nav id="sideNavBar">
         <ul>
             <li>
-                <!-- TODO: Create a responsive menu later (show/hide menu) -->
                 <button id="toggleBtn">
                     <img src="../shared/icons/icon_hamburger_menu.svg" alt="Menu Icon" id="iconMenu">
                 </button>
@@ -23,50 +19,40 @@
             <li class="active">
                 <a href="home.html">
                     <img src="../shared/icons/icon_home.svg" alt="Home Icon" id="iconHome">
-                    <!-- <span>Home</span> -->
                 </a>
             </li>
             <li>
                 <a href="order.html">
                     <img src="../shared/icons/icon_order.svg" alt="Order Icon" id="iconOrder">
-                    <!-- <span>Order</span> -->
                 </a>
             </li>
             <li>
                 <a href="stock.html">
                     <img src="../shared/icons/icon_stock.svg" alt="Stock Icon" id="iconStock">
-                    <!-- <span>Stock</span> -->
                 </a>
             </li>
             <li>
                 <a href="recipes.html">
                     <img src="../shared/icons/icon_recipes.svg" alt="Recipes Icon" id="iconRecipes">
-                    <!-- <span>Recipes</span> -->
                 </a>
             </li>
             <li>
                 <a href="supplier.html">
                     <img src="../shared/icons/icon_supplier.svg" alt="Supplier Icon" id="iconSupplier">
-                    <!-- <span>Suppliers</span> -->
                 </a>
             </li>
             <li>
-                <!-- TEMPORARY! PUT LOGOUT BUTTON AT THE TOP NAVBAR -->
                 <a href="../index.html" id="logoutBtn" class="logout-button">
                     <img src="../shared/icons/icon_logout.svg" alt="Logout Icon" id="iconLogout">
-                    <!-- <span>Logout</span> -->
                 </a>
             </li>
         </ul>
     </nav>
 
-
-    <!-- separates the styling sa sidebar -->
     <div class="contentWrapper">
         <nav id="topNavBar">
             <div id="logo">
                 <a href="home.html">
-                    <!-- <span>Toki Toki</span> -->
                     <img src="../shared/images/logo.png" alt="Toki Toki Logo">
                 </a>
             </div>
@@ -81,7 +67,6 @@
                     </li>
                     <li>
                         <a href="#">
-                            <!-- <span>Notifications</span> -->
                             <img src="../shared/icons/icon_notification.svg" alt="Notifications Icon">
                         </a>
                     </li>
@@ -107,42 +92,139 @@
                 </header>
 
                 <section class="dashboard-grid">
-                    <article class="report-card">
-                        <h2>Inventory Report</h2>
-                        <div class="inventory-stats">
-                            <div class="stat-item">
-                                <span class="stat-label">Total Items</span>
-                                <span class="stat-value">156</span>
+                    <div class="top-row">
+                        <!-- Inventory Status Report -->
+                        <article class="report-card">
+                            <h2>Inventory Status Report</h2>
+                            <div class="inventory-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Item ID</th>
+                                            <th>Item Name</th>
+                                            <th>Supplier</th>
+                                            <th>Quantity</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ITM001</td>
+                                            <td>Fresh Salmon</td>
+                                            <td>Seafood Co.</td>
+                                            <td>50 kg</td>
+                                            <td><span class="status-done">Done</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ITM002</td>
+                                            <td>Carrots</td>
+                                            <td>Fresh Veggies</td>
+                                            <td>10 kg</td>
+                                            <td><span class="status-restock">Restock</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-label">Low Stock Items</span>
-                                <span class="stat-value alert">12</span>
-                            </div>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="shipments-card">
-                        <header class="card-header">
-                            <h2>Recent Shipments</h2>
-                            <a href="#" class="show-all">Show All</a>
-                        </header>
-                        <ul class="shipments-list">
-                            <li class="shipment-item">
-                                <time class="date">Oct 15, 2023</time>
-                                <span class="supplier">Fresh Veggies Co.</span>
-                                <span class="status status-delivered">Delivered</span>
-                            </li>
-                        </ul>
-                    </article>
+                        <!-- Recent Customer Orders -->
+                        <article class="orders-card">
+                            <header class="card-header">
+                                <h2>Recent Customer Orders</h2>
+                                <button class="show-all">Show All</button>
+                            </header>
+                            <div class="orders-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Order ID</th>
+                                            <th>Time Ordered</th>
+                                            <th>Order/s</th>
+                                            <th>Special Request</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ORD001</td>
+                                            <td>10:30 AM</td>
+                                            <td>Sushi Set A, Miso Soup</td>
+                                            <td>No wasabi</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ORD002</td>
+                                            <td>10:45 AM</td>
+                                            <td>Ramen, Gyoza</td>
+                                            <td>Extra spicy</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="bottom-row">
+                        <!-- Recent Shipments -->
+                        <article class="shipments-card full-width">
+                            <header class="card-header">
+                                <h2>Recent Shipments</h2>
+                                <div class="shipment-controls">
+                                    <select class="sort-by">
+                                        <option value="">Sort by</option>
+                                        <option value="date">Date</option>
+                                        <option value="supplier">Supplier</option>
+                                        <option value="status">Status</option>
+                                    </select>
+                                    <select class="filter-by">
+                                        <option value="">Filter</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="transit">In Transit</option>
+                                        <option value="delivered">Delivered</option>
+                                    </select>
+                                    <button class="show-all">Show All</button>
+                                </div>
+                            </header>
+                            <div class="shipments-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Transaction ID</th>
+                                            <th>Item ID</th>
+                                            <th>Quantity</th>
+                                            <th>Supplier</th>
+                                            <th>Time Ordered</th>
+                                            <th>ETA</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>TRX001</td>
+                                            <td>ITM001</td>
+                                            <td>100 kg</td>
+                                            <td>Seafood Co.</td>
+                                            <td>Oct 15, 8:00 AM</td>
+                                            <td>Oct 16, 2:00 PM</td>
+                                            <td><span class="status-transit">In Transit</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>TRX002</td>
+                                            <td>ITM002</td>
+                                            <td>50 kg</td>
+                                            <td>Fresh Veggies</td>
+                                            <td>Oct 15, 9:00 AM</td>
+                                            <td>Oct 16, 3:00 PM</td>
+                                            <td><span class="status-pending">Pending</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </article>
+                    </div>
                 </section>
             </section>
         </main>
     </div>
 
     <script type="module" src="../shared/js/manager.js"></script>
-    <!-- TODO: Add script for changing icons when selected -->
-    <!-- <script type="module" src="../shared/js/navbarFunctions.js"></script> -->
-
 </body>
-
 </html>
