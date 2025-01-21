@@ -3,38 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Management - Firebase Tokyo</title>
+    <title>Stock</title>
     <link rel="stylesheet" href="../shared/css/common.css">
     <link rel="stylesheet" href="css/manager-styles.css">
+    <link rel="stylesheet" href="../shared/css/navbar.css">
 </head>
 <body>
-    <nav class="main-nav">
+    <nav id="sideNavBar">
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="order.html">Order</a></li>
-            <li><a href="stock.html" class="active">Stock</a></li>
-            <li><a href="recipes.html">Recipes</a></li>
-            <li><a href="supplier.html">Suppliers</a></li>
-            <li><a href="../index.html" id="logoutBtn" class="logout-button">Logout</a></li>
+            <li>
+                <button id="toggleBtn">
+                    <img src="../shared/icons/icon_hamburger_menu.svg" alt="Menu Icon" id="iconMenu">
+                </button>
+            </li>
+            <li>
+                <a href="home.html">
+                    <img src="../shared/icons/icon_home.svg" alt="Home Icon" id="iconHome">
+                </a>
+            </li>
+            <li>
+                <a href="order.html">
+                    <img src="../shared/icons/icon_order.svg" alt="Order Icon" id="iconOrder">
+                </a>
+            </li>
+            <li class="active">
+                <a href="stock.html">
+                    <img src="../shared/icons/icon_stock.svg" alt="Stock Icon" id="iconStock">
+                </a>
+            </li>
+            <li>
+                <a href="recipes.html">
+                    <img src="../shared/icons/icon_recipes.svg" alt="Recipes Icon" id="iconRecipes">
+                </a>
+            </li>
+            <li>
+                <a href="supplier.html">
+                    <img src="../shared/icons/icon_supplier.svg" alt="Supplier Icon" id="iconSupplier">
+                </a>
+            </li>
+            <li>
+                <a href="../index.html" id="logoutBtn" class="logout-button">
+                    <img src="../shared/icons/icon_logout.svg" alt="Logout Icon" id="iconLogout">
+                </a>
+            </li>
         </ul>
     </nav>
 
-    <div class="stock-container">
-        <h1>Stock Management</h1>
-        <div class="ingredients-grid">
-            <div class="category-section">
-                <h2>Vegetables</h2>
-                <div class="ingredients-list">
-                    <div class="ingredient-card">
-                        <img src="../shared/images/ingredients/carrots.jpg" alt="Carrots">
-                        <h3>Carrots</h3>
-                        <span class="stock-level">Stock: 45 kg</span>
-                        <button class="action-button">Update Stock</button>
+    <div class="contentWrapper">
+        <nav id="topNavBar">
+            <div id="logo">
+                <a href="home.html">
+                    <img src="../shared/images/logo.png" alt="Toki Toki Logo">
+                </a>
+            </div>
+
+            <div id="topMenu">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="../shared/icons/icon_phone.svg" alt="Support Icon">
+                            <span>Support</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../shared/icons/icon_notification.svg" alt="Notifications Icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../shared/icons/icon_pfp.png" alt="Profile Icon">
+                            <span>Manager X</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../shared/icons/icon_down.svg" alt="Dropdown Icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <div class="stock-container">
+                <h1>Stock Management</h1>
+                <div class="ingredients-grid">
+                    <div class="category-section">
+                        <h2>Vegetables</h2>
+                        <div class="ingredients-list">
+                            <div class="ingredient-card">
+                                <img src="../shared/images/ingredients/carrots.jpg" alt="Carrots">
+                                <h3>Carrots</h3>
+                                <span class="stock-level">Stock: 45 kg</span>
+                                <button class="action-button">Update Stock</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
+
     <script type="module" src="../shared/js/manager.js"></script>
 </body>
 </html>
