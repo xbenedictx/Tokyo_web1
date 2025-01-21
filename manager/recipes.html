@@ -3,39 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes - Firebase Tokyo</title>
+    <title>Recipes</title>
     <link rel="stylesheet" href="../shared/css/common.css">
     <link rel="stylesheet" href="css/manager-styles.css">
+    <link rel="stylesheet" href="../shared/css/navbar.css">
 </head>
 <body>
-    <nav class="main-nav">
+    <nav id="sideNavBar">
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="order.html">Order</a></li>
-            <li><a href="stock.html">Stock</a></li>
-            <li><a href="recipes.html" class="active">Recipes</a></li>
-            <li><a href="supplier.html">Suppliers</a></li>
-            <li><a href="../index.html" id="logoutBtn" class="logout-button">Logout</a></li>
+            <li>
+                <button id="toggleBtn">
+                    <img src="../shared/icons/icon_hamburger_menu.svg" alt="Menu Icon" id="iconMenu">
+                </button>
+            </li>
+            <li>
+                <a href="home.html">
+                    <img src="../shared/icons/icon_home.svg" alt="Home Icon" id="iconHome">
+                </a>
+            </li>
+            <li>
+                <a href="order.html">
+                    <img src="../shared/icons/icon_order.svg" alt="Order Icon" id="iconOrder">
+                </a>
+            </li>
+            <li>
+                <a href="stock.html">
+                    <img src="../shared/icons/icon_stock.svg" alt="Stock Icon" id="iconStock">
+                </a>
+            </li>
+            <li class="active">
+                <a href="recipes.html">
+                    <img src="../shared/icons/icon_recipes.svg" alt="Recipes Icon" id="iconRecipes">
+                </a>
+            </li>
+            <li>
+                <a href="supplier.html">
+                    <img src="../shared/icons/icon_supplier.svg" alt="Supplier Icon" id="iconSupplier">
+                </a>
+            </li>
+            <li>
+                <a href="../index.html" id="logoutBtn" class="logout-button">
+                    <img src="../shared/icons/icon_logout.svg" alt="Logout Icon" id="iconLogout">
+                </a>
+            </li>
         </ul>
     </nav>
 
-    <div class="recipes-container">
-        <h1>Recipe Management</h1>
-        <div class="recipes-grid">
-            <div class="recipe-card">
-                <img src="../shared/images/recipes/recipe1.jpg" alt="Recipe 1">
-                <h3>Recipe Name</h3>
-                <div class="ingredients-needed">
-                    <h4>Required Ingredients:</h4>
-                    <ul>
-                        <li>Ingredient 1</li>
-                        <li>Ingredient 2</li>
-                    </ul>
-                </div>
-                <button class="action-button">View Details</button>
+    <div class="contentWrapper">
+        <nav id="topNavBar">
+            <div id="logo">
+                <a href="home.html">
+                    <img src="../shared/images/logo.png" alt="Toki Toki Logo">
+                </a>
             </div>
-        </div>
+
+            <div id="topMenu">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="../shared/icons/icon_phone.svg" alt="Support Icon">
+                            <span>Support</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../shared/icons/icon_notification.svg" alt="Notifications Icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../shared/icons/icon_pfp.png" alt="Profile Icon">
+                            <span>Manager X</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../shared/icons/icon_down.svg" alt="Dropdown Icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <div class="recipes-container">
+                <h1>Recipe Management</h1>
+                <div class="recipes-grid">
+                    <div class="recipe-card">
+                        <img src="../shared/images/recipes/recipe1.jpg" alt="Recipe 1">
+                        <h3>Recipe Name</h3>
+                        <div class="ingredients-needed">
+                            <h4>Required Ingredients:</h4>
+                            <ul>
+                                <li>Ingredient 1</li>
+                                <li>Ingredient 2</li>
+                            </ul>
+                        </div>
+                        <button class="action-button">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
+
     <script type="module" src="../shared/js/manager.js"></script>
 </body>
 </html>
