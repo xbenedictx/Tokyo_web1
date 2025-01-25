@@ -15,6 +15,7 @@
     list-style: none;
 }
 
+/* TODO: Move this into an appropriate file, like common.css */
 html {
     font-family: Switzer, sans-serif;
     line-height: 1.5rem;
@@ -23,7 +24,7 @@ html {
 body {
     min-height: 100vh;
     min-height: 100dvh;
-    background-color: var(--base-clr);
+    /* background-color: var(--base-clr); */
     color: var(--text-clr);
     display: grid;
     grid-template-columns: auto 1fr;

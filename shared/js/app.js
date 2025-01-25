@@ -36,13 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 
+                // TODO: Find a way to automatically create a new home for each user 
                 if (userType === 'Manager') {
                     window.location.href = '/manager/home.html';
                 } else if (userType === 'Supplier') {
                     const supplierRoutes = {
                         'elevazobenedict@gmail.com': '/supplier1/home.html',
                         'supplier2@tokyowebapp.com': '/supplier2/home.html',
-                        'supplier3@tokyowebapp.com': '/supplier3/home.html'
+                        'supplier3@tokyowebapp.com': '/supplier3/home.html',
+                        'suppliertest@gmail.com' : '/supplier1/home.html'
                     };
                     
                     const redirectPath = supplierRoutes[email];
