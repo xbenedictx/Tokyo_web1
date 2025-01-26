@@ -22,7 +22,7 @@ html {
 
 body {
     /* background-color: #fafafa; */
-    /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 main {
@@ -236,6 +236,7 @@ main {
     margin-top: 25px;
     grid-template-columns: repeat(2, 1fr);  /* Creates two columns with equal width */
     gap: 20px;
+    /* padding: 20px; */
 }
 
 .card {
@@ -250,6 +251,7 @@ main {
     /* transition: 0.15s ease-in-out; */
     /* Can't choose between these 2 */
     transition: 0.15s ease;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -330,6 +332,9 @@ table {
     /* Helps prevent the text from wrapping*/
     flex-grow: 0; /* Prevent from growing excessively */
     flex-shrink: 0; /* Prevent shrinking */
+    /* transition: all 0.15s ease-in-out; */
+    transition: 0.15s ease;
+
 }
 
 .actionButtons .editRecipeButton {
@@ -340,6 +345,11 @@ table {
 .actionButtons .deleteRecipeButton {
     background: var(--accent-clr);
     cursor: pointer;
+}
+
+.actionButtons .editRecipeButton:hover,
+.actionButtons .deleteRecipeButton:hover {
+    scale: 1.05;
 }
 
 .actionButtons button {
@@ -362,7 +372,7 @@ table {
 
 /* Responsive Design */
 /* Stack cards in one column on small screens */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .recipeCards {
         grid-template-columns: 1fr;  
     }
