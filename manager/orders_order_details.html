@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details Popup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="openPopup">View Order Details</button>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close-btn">&times;</span>
+            <h2>Order Details</h2>
+            <p><strong>Order No:</strong> 1234</p>
+            <p><strong>Date Ordered:</strong> 10-26-2024 13:37 PM</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order/s</th>
+                        <th>Quantity</th>
+                        <th>Special Request</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chicken Oyakodon Supreme</td>
+                        <td>x5</td>
+                        <td>No chicken</td>
+                    </tr>
+                    <tr>
+                        <td>Pork Katsudon</td>
+                        <td>x1</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Red Ice Tea</td>
+                        <td>x6</td>
+                        <td>No ice</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="closePopupBtn">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Interface</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #222;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-right button {
+            background-color: #444;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .order-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .order-card {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .order-card h2 {
+            margin-bottom: 10px;
+        }
+
+        .order-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .order-details span {
+            margin-right: 10px;
+        }
+
+        .special-requests {
+            margin-top: 10px;
+        }
+
+        .special-requests ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .special-requests li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Orders</h1>
+
+        <div class="header">
+            <div class="logo">TOKI TOKI</div>
+            <div class="header-right">
+                <button>Support</button>
+                <button>Manager</button>
+            </div>
+        </div>
+
+        <div class="order-list">
+            <div class="order-card">
+                <h2>Order No: 1234</h2>
+                <div class="order-details">
+                    <span>Time Ordered:</span>
+                    <span>13:20 PM</span>
+                </div>
+                <div class="order-details">
+                    <span>Orders:</span>
+                    <span>Chicken Oyakodon Supreme x5</span>
+                    <span>Pork Katsudon x1</span>
+                    <span>Red Ice Tea x1</span>
+                </div>
+                <div class="special-requests">
+                    <h3>Special Requests:</h3>
+                    <ul>
+                        <li>No Chicken</li>
+                        <li>No Ice</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="order-card">
+                <h2>Order No: 1235</h2>
+                <div class="order-details">
+                    <span>Time Ordered:</span>
+                    <span>13:25 PM</span>
+                </div>
+                <div class="order-details">
+                    <span>Orders:</span>
+                    <span>Pork Katsudon x1</span>
+                    <span>Red Ice Tea x1</span>
+                </div>
+                <div class="special-requests">
+                    <h3>Special Requests:</h3>
+                    <ul>
+                        <li>No Ice</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="order-card">
+                <h2>Order No: 1235</h2>
+                <div class="order-details">
+                    <span>Time Ordered:</span>
+                    <span>13:25 PM</span>
+                </div>
+                <div class="order-details">
+                    <span>Orders:</span>
+                    <span>Pork Katsudon x1</span>
+                    <span>Red Ice Tea x1</span>
+                </div>
+                <div class="special-requests">
+                    <h3>Special Requests:</h3>
+                    <ul>
+                        <li>No Ice</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="order-card">
+                <h2>Order No: 1234</h2>
+                <div class="order-details">
+                    <span>Time Ordered:</span>
+                    <span>13:20 PM</span>
+                </div>
+                <div class="order-details">
+                    <span>Orders:</span>
+                    <span>Chicken Oyakodon Supreme x5</span>
+                    <span>Pork Katsudon x1</span>
+                    <span>Red Ice Tea x1</span>
+                </div>
+                <div class="special-requests">
