@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details Modal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .modal {
+            background: white;
+            width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            position: relative;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .order-info {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .order-item {
+            margin-top: 15px;
+            font-size: 14px;
+            position: relative;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .order-details {
+            margin-bottom: 5px;
+        }
+        .special-request {
+            font-size: 12px;
+            color: gray;
+        }
+        .quantity {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #000;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 12px;
+        }
+        .close-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: black;
+            color: white;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="modal">
+        <div class="modal-header">
+            <span>Order Details</span>
+            <button class="close-btn">&times;</button>
+        </div>
+
+        <div class="order-info">
+            <p><strong>Order No: 1234</strong></p>
+            <p>Date Ordered: 10-26-2024 13:37 PM</p>
+        </div>
+
+        <div class="order-item">
+            <div class="order-details">
+                <p>Chicken Oyakodon Supreme</p>
+                <p class="special-request">Special Request: No chicken</p>
+            </div>
+            <span class="quantity">x5</span>
+        </div>
+
+        <div class="order-item">
+            <div class="order-details">
+                <p>Pork Katsudon</p>
+                <p class="special-request">Special Request: N/A</p>
+            </div>
+            <span class="quantity">x1</span>
+        </div>
+
+        <div class="order-item">
+            <div class="order-details">
+                <p>Red Ice Tea</p>
+                <p class="special-request">Special Request: No ice</p>
+            </div>
+            <span class="quantity">x6</span>
+        </div>
+
+        <button class="close-button">Close</button>
+    </div>
+
+</body>
+</html>
