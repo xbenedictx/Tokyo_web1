@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Delivery Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .transaction {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        .details {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 10px;
+            font-size: 14px;
+        }
+        .details-left {
+            text-align: left;
+            font-weight: bold;
+        }
+        .details-right {
+            text-align: right;
+            color: gray;
+        }
+        .order {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .order-left {
+            text-align: left;
+            width: 50%;
+        }
+        .order-right {
+            text-align: right;
+            width: 50%;
+        }
+        .order p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .order-gray {
+            color: gray;
+        }
+        .confirm-btn {
+            width: 100%;
+            padding: 10px;
+            background: rgb(240, 47, 47);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">Order Details</div>
+        <div class="transaction">
+            Transaction ID: <strong>1234</strong>
+        </div>
+
+        <div class="details">
+            <div class="details-left">
+                <p>Supplier</p>
+                <p>Date Ordered</p>
+            </div>
+            <div class="details-right">
+                <p>X</p>
+                <p>10-07-2024 13:30 PM</p>
+            </div>
+        </div>
+
+        <div class="order">
+            <div class="order-left">
+                <p><strong>Order/s</strong></p>
+                <p class="order-gray">Carrots</p>
+                <p class="order-gray">Eggplant</p>
+                <p class="order-gray">Tofu</p>
+            </div>
+            <div class="order-right">
+                <p><strong>Quantity</strong></p>
+                <p class="order-gray">10 kg</p>
+                <p class="order-gray">10 kg</p>
+                <p class="order-gray">8 kg</p>
+            </div>
+        </div>
+
+        <button class="confirm-btn">Cancer Order</button>
+    </div>
+
+</body>
+</html>

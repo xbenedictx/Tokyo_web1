@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Supplier</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px; /* Set fixed width for the form */
+            max-height: 80vh; /* Set maximum height */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: none; /* Prevent resizing of textareas */
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: #e74c3c; /* Red */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            flex: 1;
+            margin: 0 5px;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Custom Scrollbar Style */
+        .form-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .form-container::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 4px;
+        }
+        .form-container::-webkit-scrollbar-thumb:hover {
+            background-color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Edit Supplier</h2>
+
+        <form>
+            <div>
+                <label for="supplierID">Supplier's ID:</label>
+                <input type="text" id="supplierID" value="1234"> <!-- Made editable -->
+            </div>
+
+            <div>
+                <label for="supplierName">Supplier's Name:</label>
+                <input type="text" id="supplierName" value="X">
+            </div>
+
+            <div>
+                <label for="contactInfo">Contact Info:</label>
+                <input type="text" id="contactInfo" value="supplierx@gmail.com">
+                <input type="text" id="contactNumber" value="+6390 000 0000">
+            </div>
+
+            <div>
+                <label for="location">Location:</label>
+                <textarea id="location" rows="2">Ramon Cojuanco Bldg., Makati Avenue, Makati City</textarea>
+                <textarea id="location2" rows="2">Pedro Gil St., Paco Manila</textarea>
+            </div>
+
+            <div>
+                <label for="facebookLink">Facebook Link:</label>
+                <input type="text" id="facebookLink" value="facebook.com/supplierx">
+            </div>
+
+            <div class="buttons">
+                <button type="button">Delete Supplier</button>
+                <button type="button">Done</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

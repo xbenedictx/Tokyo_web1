@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Supplier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .modal {
+            background: white;
+            width: 400px; 
+            padding: 20px; 
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            overflow-y: auto;
+            max-height: 80vh; 
+        }
+        .modal-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .close-btn {
+            float: right;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 10px; 
+            text-align: left;
+        }
+        .full-width {
+        }
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            height: 35px;
+            overflow-y: auto; 
+        }
+        .done-btn {
+            width: 100%;
+            padding: 10px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="modal">
+        <span class="close-btn">&times;</span>
+        <div class="modal-header">Add New Supplier</div>
+
+        <div class="form-container">
+            <div>
+                <label>Supplier's ID</label>
+                <input type="text" placeholder="Enter Supplier’s ID">
+            </div>
+            <div>
+                <label>Contact Info</label>
+                <input type="email" placeholder="Enter email address">
+                <input type="text" placeholder="Enter phone number">
+            </div>
+            <div>
+                <label>Supplier’s Name</label>
+                <input type="text" placeholder="Enter Supplier’s name">
+            </div>
+            <div class="full-width">
+                <label>Facebook Link</label>
+                <input type="text" placeholder="facebook.com/supplierx">
+            </div>
+            <div>
+                <label>Location</label>
+                <input type="text" placeholder="Address Line 1">
+                <input type="text" placeholder="Address Line 2">
+            </div>
+        </div>
+
+        <button class="done-btn">Done</button>
+    </div>
+
+</body>
+</html>
