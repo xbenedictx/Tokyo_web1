@@ -9,7 +9,7 @@ body {
     background-color: #fafafa;
     color: #262626;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .left-decoration {
@@ -30,7 +30,7 @@ body {
     height: 90%;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
@@ -57,7 +57,7 @@ body {
     max-width: 600px;
     width: 100%;
     margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -108,7 +108,7 @@ body {
 .form-input:focus {
     outline: none;
     border-color: #0095f6;
-    box-shadow: 0 0 0 2px rgba(0,149,246,0.2);
+    box-shadow: 0 0 0 2px rgba(0, 149, 246, 0.2);
 }
 
 .login-button {
@@ -172,7 +172,7 @@ body {
     max-width: 600px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .signup-box p {
@@ -197,7 +197,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     animation: fadeIn 0.3s ease;
 }
@@ -232,18 +232,37 @@ textarea.form-input {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideIn {
-    from { transform: translateX(20px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 #userTypeSpinner {

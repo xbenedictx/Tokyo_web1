@@ -1,0 +1,78 @@
+[
+    {
+        "_recipeID": "recipe-0",
+        "mealImage": "",
+        "_name": "Spaghetti Carbonara",
+        "ingredients": [
+            {
+                "name": "Spaghetti",
+                "amount": "200g"
+            },
+            {
+                "name": "Egg yolks",
+                "amount": "2"
+            },
+            {
+                "name": "Pancetta",
+                "amount": "100g"
+            },
+            {
+                "name": "Parmesan",
+                "amount": "50g"
+            },
+            {
+                "name": "Black pepper",
+                "amount": "to taste"
+            }
+        ],
+        "category": "Pasta"
+    },
+    {
+        "_recipeID": "recipe-1",
+        "mealImage": "",
+        "_name": "Chicken Curry",
+        "ingredients": [
+            {
+                "name": "Chicken",
+                "amount": "200g"
+            },
+            {
+                "name": "Curry Powder",
+                "amount": "2"
+            },
+            {
+                "name": "Coconut Milk",
+                "amount": "100g"
+            },
+            {
+                "name": "Rice",
+                "amount": "50g"
+            }
+        ],
+        "category": "Main Courses: Meat dishes"
+    },
+    {
+        "_recipeID": "recipe-2",
+        "mealImage": "",
+        "_name": "Chicken a",
+        "ingredients": [
+            {
+                "name": "Chicken",
+                "amount": "200g"
+            },
+            {
+                "name": "Curry Powder",
+                "amount": "2"
+            },
+            {
+                "name": "Coconut Milk",
+                "amount": "100g"
+            },
+            {
+                "name": "Rice",
+                "amount": "500g"
+            }
+        ],
+        "category": "Main Courses: Meat dishes"
+    }
+]
