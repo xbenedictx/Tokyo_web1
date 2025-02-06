@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Recipe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;  
+        }
+
+        .modal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-content {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 8px;
+            width: 500px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .upload-box {
+            width: 90%;
+            border: 2px dashed gray;
+            padding: 20px;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid gray;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: red;
+            color: white;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .add-btn {
+            background-color: darkred;
+        }
+
+        .success-message {
+            display: none;
+            background-color: green;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Recipe</h2>
+                <span class="close">&times;</span>
+            </div>
+
+            <div class="upload-box">
+                <label for="imageUpload">Drag or choose the image of the item</label>
+                <input type="file" id="imageUpload" accept="image/*">
+            </div>
+
+            <input type="text" id="recipeName" placeholder="Recipe Name">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Measurement</th>
+                    </tr>
+                </thead>
+                <tbody id="ingredientsTable">
+                    <tr>
+                        <td><input type="text" placeholder="Ingredient Name"></td>
+                        <td><input type="number" placeholder="0"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button class="add-btn" id="addIngredientBtn">+ Add Ingredient</button>
+
+            <button id="doneBtn">Done</button>
+        </div>
+    </div>
+
+    <div id="successMessage" class="success-message">New Recipe Successfully Created!</div>
+
+    <script>
+        const modal = document.querySelector(".modal");
+        const closeModalBtn = document.querySelector(".close");
+        const doneBtn = document.getElementById("doneBtn");
+        const successMessage = document.getElementById("successMessage");
+        const addIngredientBtn = document.getElementById("addIngredientBtn");
+        const ingredientsTable = document.getElementById("ingredientsTable");
+
+        closeModalBtn.onclick = () => modal.style.display = "none";
+
+        doneBtn.onclick = () => {
+            modal.style.display = "none";
+            successMessage.style.display = "block";
+            setTimeout(() => successMessage.style.display = "none", 3000);
+        };
+
+        addIngredientBtn.onclick = () => {
+            const newRow = document.createElement("tr");
+
+            const ingredientCell = document.createElement("td");
+            const ingredientInput = document.createElement("input");
+            ingredientInput.type = "text";
+            ingredientInput.placeholder = "Ingredient Name";
+            ingredientCell.appendChild(ingredientInput);
+
+            const measurementCell = document.createElement("td");
+            const measurementInput = document.createElement("input");
+            measurementInput.type = "number";
+            measurementInput.placeholder = "0";
+            measurementCell.appendChild(measurementInput);
+
+            newRow.appendChild(ingredientCell);
+            newRow.appendChild(measurementCell);
+
+            ingredientsTable.appendChild(newRow);
+        };
+    </script>
+
+</body>
+</html>
