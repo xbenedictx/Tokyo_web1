@@ -3,88 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transactions - Firebase Tokyo</title>
+    <title>Delivery Requests</title>
     <link rel="stylesheet" href="../shared/css/common.css">
-    <link rel="stylesheet" href="css/supplier1-styles.css">
+    <link rel="stylesheet" href="css/supplier-styles.css">
+    <link rel="stylesheet" href="../shared/css/navbar.css">
 </head>
 <body>
-    <nav class="supplier-nav">
+    <nav id="sideNavBar">
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li class="dropdown">
-                <a href="delivery-request.html">Delivery Requests</a>
+            <li>
+                <button id="toggleBtn">
+                    <img src="../shared/icons/icon_hamburger_menu.svg" alt="Menu Icon" id="iconMenu">
+                </button>
+            </li>
+            <li>
+                <a href="home.html">
+                    <img src="../shared/icons/icon_home.svg" alt="Home Icon" id="iconHome">
+                </a>
+            </li>
+            <li class="dropdown active">
+                <a href="delivery-request.html">
+                    <img src="../shared/icons/icon_delivery.svg" alt="Delivery Icon" id="iconDelivery">
+                </a>
                 <div class="dropdown-content">
                     <a href="#">New Requests</a>
                     <a href="#">In Progress</a>
                     <a href="#">Completed</a>
                 </div>
             </li>
-            <li><a href="transactions.html" class="active">Transactions</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="../index.html" id="logoutBtn" class="logout-button">Logout</a></li>
+            <li>
+                <a href="transactions.html">
+                    <img src="../shared/icons/icon_transaction.svg" alt="Transaction Icon" id="iconTransaction">
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <img src="../shared/icons/icon_profile.svg" alt="Profile Icon" id="iconProfile">
+                </a>
+            </li>
+            <li>
+                <a href="../index.html" id="logoutBtn" class="logout-button">
+                    <img src="../shared/icons/icon_logout.svg" alt="Logout Icon" id="iconLogout">
+                </a>
+            </li>
         </ul>
     </nav>
 
-    <div class="transactions-container">
-        <h1>Transaction History</h1>
-        
-        <div class="transaction-filters">
-            <div class="filter-group">
-                <input type="month" class="form-input" id="monthFilter">
-                <select class="form-input" id="statusFilter">
-                    <option value="all">All Status</option>
-                    <option value="completed">Completed</option>
-                    <option value="pending">Pending</option>
-                    <option value="cancelled">Cancelled</option>
-                </select>
-            </div>
-            <div class="search-group">
-                <input type="text" class="form-input" placeholder="Search transactions...">
-            </div>
-        </div>
+        <main>
+            <div class="dashboard-container">
+                <div class="transactions-header">
+                    <h1>Transaction History</h1>
+                    <div class="transaction-controls">
+                        <input type="date" class="date-filter">
+                        <select class="status-filter">
+                            <option value="all">All Status</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                        <button class="export-btn">Export Report</button>
+                    </div>
+                </div>
 
-        <div class="transactions-list">
-            <div class="transaction-card">
-                <div class="transaction-header">
-                    <h3>Transaction #67890</h3>
-                    <span class="status-badge completed">Completed</span>
-                </div>
-                <div class="transaction-details">
-                    <div class="detail-row">
-                        <span class="detail-label">Date:</span>
-                        <span class="detail-value">October 15, 2023</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Amount:</span>
-                        <span class="detail-value">₱5,000.00</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Payment Method:</span>
-                        <span class="detail-value">Bank Transfer</span>
-                    </div>
-                </div>
-                <div class="transaction-items">
-                    <h4>Items Delivered:</h4>
-                    <ul>
-                        <li>Carrots - 10kg (₱2,000)</li>
-                        <li>Cabbage - 5kg (₱3,000)</li>
-                    </ul>
-                </div>
-                <div class="transaction-actions">
-                    <button class="action-button">View Invoice</button>
-                    <button class="action-button secondary">Download Receipt</button>
+                <div class="transactions-table card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Transaction ID</th>
+                                <th>Date</th>
+                                <th>Customer</th>
+                                <th>Amount</th>
+                                <th>Payment Method</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TRX001</td>
+                                <td>Oct 15, 2023</td>
+                                <td>Toki Toki Restaurant</td>
+                                <td>$1,500</td>
+                                <td>Bank Transfer</td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                                <td><button class="view-btn">View Details</button></td>
+                            </tr>
+                            <!-- Add more transaction rows -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </div>
-
-        <div class="pagination">
-            <button class="page-button">&lt;</button>
-            <button class="page-button active">1</button>
-            <button class="page-button">2</button>
-            <button class="page-button">3</button>
-            <button class="page-button">&gt;</button>
-        </div>
+        </main>
     </div>
-    <script type="module" src="../shared/js/supplier1.js"></script>
+
+    <script type="module" src="../shared/js/supplier.js"></script>
 </body>
 </html>

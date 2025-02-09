@@ -180,6 +180,44 @@ body {
     background-color: var(--hover-clr);
 }
 
+
+
+
+
+/* Adding styles for dropdown (supplier= delivery request) in vertical navbar */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: #ffffff;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
 /* 
 #sideNavBar a span {
     flex-grow: 1;
