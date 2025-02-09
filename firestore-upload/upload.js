@@ -9,7 +9,7 @@
  *      2.4 Click Generate New Private Key, then confirm by clicking Generate Key.
         2.5 Save the file to the secrets folder
         2.6 Copy the file name and replace the text inside require() (make sure na ilagay muna ung ../secrets/ before ung actual file name)
- * 3. Run the following command in the terminal (isa-isa):
+ * 3. Press Ctrl+` and run the following command in the terminal (isa-isa):
  *      cd firestore-upload
  *      npm install
  *      node upload.js
