@@ -3,65 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supplier Dashboard - Firebase Tokyo</title>
+    <title>Home</title>
     <link rel="stylesheet" href="../shared/css/common.css">
     <link rel="stylesheet" href="css/supplier1-styles.css">
+    <link rel="stylesheet" href="../shared/css/navbar.css">
 </head>
+
 <body>
-    <nav class="supplier-nav">
+    <nav id="sideNavBar">
         <ul>
-            <li><a href="home.html" class="active">Home</a></li>
+            <li>
+                <button id="toggleBtn">
+                    <img src="../shared/icons/icon_hamburger_menu.svg" alt="Menu Icon" id="iconMenu">
+                </button>
+            </li>
+            <li class="active">
+                <a href="home.html">
+                    <img src="../shared/icons/icon_home.svg" alt="Home Icon" id="iconHome">
+                </a>
+            </li>
             <li class="dropdown">
-                <a href="delivery-request.html">Delivery Requests</a>
+                <a href="delivery-request.html">
+                    <img src="../shared/icons/icon_delivery.svg" alt="Delivery Icon" id="iconDelivery">
+                </a>
                 <div class="dropdown-content">
                     <a href="#">New Requests</a>
                     <a href="#">In Progress</a>
                     <a href="#">Completed</a>
                 </div>
             </li>
-            <li><a href="transactions.html">Transactions</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="../index.html" id="logoutBtn" class="logout-button">Logout</a></li>
+            <li>
+                <a href="transactions.html">
+                    <img src="../shared/icons/icon_transaction.svg" alt="Transaction Icon" id="iconTransaction">
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <img src="../shared/icons/icon_profile.svg" alt="Profile Icon" id="iconProfile">
+                </a>
+            </li>
+            <li>
+                <a href="../index.html" id="logoutBtn" class="logout-button">
+                    <img src="../shared/icons/icon_logout.svg" alt="Logout Icon" id="iconLogout">
+                </a>
+            </li>
         </ul>
     </nav>
 
-    <div class="dashboard-container">
-        <div class="welcome-banner">
-            <h1>Welcome back, Fresh Veggies Co!</h1>
-            <p>Here's your daily overview</p>
-        </div>
-
-        <div class="dashboard-grid">
-            <div class="delivery-status">
-                <h2>Active Deliveries</h2>
-                <div class="status-badge status-confirmed">5 Ongoing Deliveries</div>
-                <div class="delivery-list">
-                    <!-- Delivery items will be dynamically added here -->
-                </div>
+    <div class="contentWrapper">
+        <nav id="topNavBar">
+            <div id="logo">
+                <a href="home.html">
+                    <img src="../shared/images/logo.png" alt="Toki Toki Logo">
+                </a>
             </div>
 
-            <div class="recent-transactions">
-                <h2>Recent Transactions</h2>
-                <div class="transaction-list">
-                    <!-- Transaction items will be dynamically added here -->
-                </div>
+            <div id="topMenu">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="../shared/icons/icon_phone.svg" alt="Support Icon">
+                            <span>Support</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../shared/icons/icon_notification.svg" alt="Notifications Icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../shared/icons/icon_pfp.png" alt="Profile Icon">
+                            <span>Benedict Elevazo</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../shared/icons/icon_down.svg" alt="Dropdown Icon">
+                        </a>
+                    </li>
+                </ul>
             </div>
+        </nav>
 
-            <div class="profile-card">
-                <h2>Quick Stats</h2>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-value">98%</span>
-                        <span class="stat-label">On-time Delivery</span>
+        <main>
+            <div class="dashboard-container">
+                <div class="welcome-banner">
+                    <h1>Welcome back, Benedict Elevazo!</h1>
+                    <p>Here's your daily overview</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="top-row">
+                        <div class="delivery-status card">
+                            <h2>Active Deliveries</h2>
+                            <div class="delivery-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Delivery ID</th>
+                                            <th>Customer</th>
+                                            <th>Items</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>DEL001</td>
+                                            <td>Toki Toki Restaurant</td>
+                                            <td>Fresh Vegetables Set</td>
+                                            <td><span class="status-badge status-transit">In Transit</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>DEL002</td>
+                                            <td>Sushi Place</td>
+                                            <td>Premium Produce Pack</td>
+                                            <td><span class="status-badge status-preparing">Preparing</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="recent-transactions card">
+                            <header class="card-header">
+                                <h2>Recent Transactions</h2>
+                                <button class="show-all">Show All</button>
+                            </header>
+                            <div class="transaction-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Transaction ID</th>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>TRX001</td>
+                                            <td>Oct 15, 2023</td>
+                                            <td>$1,500</td>
+                                            <td><span class="status-badge status-completed">Completed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>TRX002</td>
+                                            <td>Oct 14, 2023</td>
+                                            <td>$2,300</td>
+                                            <td><span class="status-badge status-pending">Pending</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-value">4.9</span>
-                        <span class="stat-label">Rating</span>
+
+                    <div class="bottom-row">
+                        <div class="performance-metrics card">
+                            <h2>Performance Metrics</h2>
+                            <div class="metrics-grid">
+                                <div class="metric-item">
+                                    <span class="metric-value">98%</span>
+                                    <span class="metric-label">On-time Delivery</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-value">4.9</span>
+                                    <span class="metric-label">Customer Rating</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-value">150+</span>
+                                    <span class="metric-label">Monthly Orders</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-value">$25K</span>
+                                    <span class="metric-label">Monthly Revenue</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
-    <script type="module" src="../shared/js/supplier1.js"></script>
+
+    <script type="module" src="../shared/js/supplier.js"></script>
 </body>
 </html>
