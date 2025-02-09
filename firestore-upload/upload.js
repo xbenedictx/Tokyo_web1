@@ -1,7 +1,14 @@
 /**
  * HOW TO USE (if you want to upload your recipes by yourself; if not, just message me - Breiah)
- * 1. Make sure you have node.js installed
- * 2. Get your service account key (message me how to)
+ * 1. Make sure you have node.js installed (https://nodejs.org/en/download)
+ *      1.1 Open your powershell terminal and copy-paste the commands (isa-isa) in the download page
+ * 2. Get your service account key and put it into the secrets folder (message benedict or me to give you admin access)
+ *      2.1 Go here https://console.firebase.google.com/u/6/project/tokyowebapp/overview
+        2.2 Open Settings (ung gear sa tabi ng Project Overview)
+        2.3 Click Service Accounts.
+ *      2.4 Click Generate New Private Key, then confirm by clicking Generate Key.
+        2.5 Save the file to the secrets folder
+        2.6 Copy the file name and replace the text inside require() (make sure na ilagay muna ung ../secrets/ before ung actual file name)
  * 3. Run the following command in the terminal (isa-isa):
  *      cd firestore-upload
  *      npm install
@@ -60,13 +67,14 @@
 	- Sides
 	- Desserts
 	- Beverages
- *
-
  */
 
 const admin = require("firebase-admin");
 const recipes = require("./recipes.json");
 
+// replace the text inside require() with the path to your service account key
+// Example
+// const serviceAccount = require("../secrets/tokyowebapp-bla-blab-abla.json");
 const serviceAccount = require("../secrets/tokyowebapp-firebase-adminsdk-hjast-b342420c64.json");
 
 admin.initializeApp({
