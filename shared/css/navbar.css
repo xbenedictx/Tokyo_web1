@@ -61,20 +61,25 @@ body {
 
 
 #topNavBar #logo {
-    width: 20%;
+    width: auto;
     height: 100%;
-    padding: 15px 17px;
+    padding: 0 17px;
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 #topNavBar #logo img {
-    width: 100%;
+    max-width: 60px;
+    max-height: 80%;
     height: auto;
+    width: auto;
     object-fit: contain;
-    max-height: 100%;
+    display: block;
 }
+
 
 #topNavBar #topMenu {
     width: calc(100% - 70px);
