@@ -1,26 +1,10 @@
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, update, onValue } from 'firebase/database';
-
-const firebaseConfig = {
-    apiKey: "AIzaSyDXb6gt6pei2VeFT0QWVBIkz4ZyXhsHrQE",
-    authDomain: "tokyowebapp.firebaseapp.com",
-    projectId: "tokyowebapp",
-    storageBucket: "tokyowebapp.firebasestorage.app",
-    messagingSenderId: "796275562397",
-    appId: "1:796275562397:web:d61b511c9bc41d93b58174"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
-// Wrap everything in DOMContentLoaded
-// Basic click functionality first
-document.addEventListener('DOMContentLoaded', () => {
+dEventListener('DOMContentLoaded', () => {
     const editBtn = document.querySelector('.edit-btn');
-    console.log('Edit button found:', editBtn); // Debug line
+    
+    // Load initial data
+    loadSupplierData();
 
     editBtn.onclick = function() {
-        console.log('Button clicked'); // Debug line
         const infoItems = document.querySelectorAll('.info-item p');
         
         if (this.textContent === 'Edit Details') {
@@ -44,11 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const label = input.parentNode.querySelector('label').textContent.toLowerCase();
                 updatedData[label] = input.value;
             });
-        
+
             // Update Firebase
             const supplierRef = ref(db, 'suppliers/supplier1');
-            update(supplierRef, updatedData);
-        
+            update(supplierRef, updatedData)
+                .then(() => {
+                    console.log('Data saved successfully');
+                })
+                .catch((error) => {
+                    console.error('Error saving data:', error);
+                });
+
             // Update UI
             inputs.forEach(input => {
                 const p = document.createElement('p');
@@ -59,6 +49,20 @@ document.addEventListener('DOMContentLoaded', () => {
             this.textContent = 'Edit Details';
             this.classList.remove('save-btn');
         }
-        
     };
 });
+
+function loadSupplierData() {
+    const supplierRef = ref(db, 'suppliers/supplier1');
+    onValue(supplierRef, (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+            Object.entries(data).forEach(([key, value]) => {
+                const element = document.querySelector(`.info-item:has(label:contains('${key}')) p`);
+                if (element) {
+                    element.textContent = value;
+                }
+            });
+        }
+    });
+}
