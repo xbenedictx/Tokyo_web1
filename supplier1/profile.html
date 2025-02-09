@@ -144,6 +144,37 @@
     <!-- Application Scripts -->
     <script type="module" src="../shared/js/supplier.js"></script>
     <script type="module" src="../shared/js/profile.js"></script>
+    
+    <script type="module">
+        document.querySelector('.edit-btn').addEventListener('click', function() {
+            console.log('clicked');
+            const infoItems = document.querySelectorAll('.info-item p');
+            
+            if (this.textContent === 'Edit Details') {
+                infoItems.forEach(item => {
+                    const currentValue = item.textContent;
+                    const input = document.createElement('input');
+                    input.value = currentValue;
+                    input.className = 'edit-input';
+                    item.parentNode.replaceChild(input, item);
+                });
+                
+                this.textContent = 'Save Changes';
+                this.classList.add('save-btn');
+            } else {
+                const inputs = document.querySelectorAll('.edit-input');
+                inputs.forEach(input => {
+                    const p = document.createElement('p');
+                    p.textContent = input.value;
+                    input.parentNode.replaceChild(p, input);
+                });
+                
+                this.textContent = 'Edit Details';
+                this.classList.remove('save-btn');
+            }
+        });
+    </script>
+    
 
 </body>
 </html>
