@@ -1,70 +1,68 @@
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, update, onValue } from 'firebase/database';
-
-const firebaseConfig = {
-    // Your Firebase config here
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
-// Wrap everything in DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Edit button click handler
+dEventListener('DOMContentLoaded', () => {
     const editBtn = document.querySelector('.edit-btn');
     
-    editBtn.addEventListener('click', function() {
+    // Load initial data
+    loadSupplierData();
+
+    editBtn.onclick = function() {
         const infoItems = document.querySelectorAll('.info-item p');
         
-        // Convert text to input fields
-        infoItems.forEach(item => {
-            const currentValue = item.textContent;
-            const input = document.createElement('input');
-            input.value = currentValue;
-            input.className = 'edit-input';
-            item.parentNode.replaceChild(input, item);
-        });
+        if (this.textContent === 'Edit Details') {
+            // Enter edit mode
+            infoItems.forEach(item => {
+                const currentValue = item.textContent;
+                const input = document.createElement('input');
+                input.value = currentValue;
+                input.className = 'edit-input';
+                item.parentNode.replaceChild(input, item);
+            });
+            
+            this.textContent = 'Save Changes';
+            this.classList.add('save-btn');
+        } else {
+            // Save changes
+            const inputs = document.querySelectorAll('.edit-input');
+            const updatedData = {};
+            
+            inputs.forEach(input => {
+                const label = input.parentNode.querySelector('label').textContent.toLowerCase();
+                updatedData[label] = input.value;
+            });
 
-        // Change edit button to save button
-        this.textContent = 'Save Changes';
-        this.classList.add('save-btn');
-        
-        // Add save functionality
-        this.onclick = saveChanges;
-    });
+            // Update Firebase
+            const supplierRef = ref(db, 'suppliers/supplier1');
+            update(supplierRef, updatedData)
+                .then(() => {
+                    console.log('Data saved successfully');
+                })
+                .catch((error) => {
+                    console.error('Error saving data:', error);
+                });
 
-    function saveChanges() {
-        const inputs = document.querySelectorAll('.edit-input');
-        const updatedData = {};
-        
-        inputs.forEach(input => {
-            const label = input.parentNode.querySelector('label').textContent.toLowerCase();
-            updatedData[label] = input.value;
-        });
+            // Update UI
+            inputs.forEach(input => {
+                const p = document.createElement('p');
+                p.textContent = input.value;
+                input.parentNode.replaceChild(p, input);
+            });
+            
+            this.textContent = 'Edit Details';
+            this.classList.remove('save-btn');
+        }
+    };
+});
 
-        // Update Firebase
-        const supplierRef = ref(db, 'suppliers/supplier1');
-        update(supplierRef, updatedData);
-        
-        // Reset UI
-        location.reload();
-    }
-
-    // Listen for real-time updates
+function loadSupplierData() {
     const supplierRef = ref(db, 'suppliers/supplier1');
     onValue(supplierRef, (snapshot) => {
         const data = snapshot.val();
-        updateUI(data);
-    });
-
-    function updateUI(data) {
         if (data) {
             Object.entries(data).forEach(([key, value]) => {
-                const element = document.querySelector(`[data-field="${key}"]`);
+                const element = document.querySelector(`.info-item:has(label:contains('${key}')) p`);
                 if (element) {
                     element.textContent = value;
                 }
             });
         }
-    }
-});
+    });
+}
