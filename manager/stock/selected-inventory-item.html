@@ -6,142 +6,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Details</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-        }
-        .container {
-            max-width: 1000px;
-            margin: auto;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .stock-info {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .stock-info img {
-            width: 100px;
-            height: 100px;
-            border-radius: 5px;
-            object-fit: cover;
-        }
-        .details {
-            font-size: 14px;
-        }
-        .details strong {
-            font-size: 16px;
-        }
-        .buttons {
-            margin-top: 10px;
-        }
-        .btn {
-            padding: 8px 12px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .btn.red {
-            background: red;
-            color: white;
-        }
-        .btn.black {
-            background: black;
-            color: white;
-        }
-        .restock-log {
-            margin-top: 30px;
-        }
-        .log-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 15px;
-        }
-        .log-card {
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-    </style>
+
+    <link rel="stylesheet" href="../../shared/css/stock-styles.css">
+    <link rel="stylesheet" href="../../shared/css/common.css">
+    <link rel="stylesheet" href="../../shared/css/navbar.css">
+
 </head>
 <body>
+    <nav id="sideNavBar">
+        <ul>
+            <li>
+                <button id="toggleBtn">
+                    <img src="../../shared/icons/icon_hamburger_menu.svg" alt="Menu Icon" id="iconMenu">
+                </button>
+            </li>
+            <li>
+                <a href="../home.html">
+                    <img src="../../shared/icons/icon_home.svg" alt="Home Icon" id="iconHome">
+                </a>
+            </li>
+            <li>
+                <a href="../../order.html">
+                    <img src="../../shared/icons/icon_order.svg" alt="Order Icon" id="iconOrder">
+                </a>
+            </li>
+            <li class="active">
+                <a href="../stock/stock.html">
+                    <img src="../../shared/icons/icon_stock.svg" alt="Stock Icon" id="iconStock">
+                </a>
+            </li>
+            <li>
+                <a href="../supplier/supplier.html">
+                    <img src="../../shared/icons/icon_supplier.svg" alt="Supplier Icon" id="iconSupplier">
+                </a>
+            </li>
+            <li>
+                <a href="../../index.html" id="logoutBtn" class="logout-button">
+                    <img src="../../shared/icons/icon_logout.svg" alt="Logout Icon" id="iconLogout">
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-<div class="container">
-    <div class="header">
-        <h2>Stock Details</h2>
-        <button class="btn black">Restock Item</button>
-    </div>
+    <div class="contentWrapper">
+        <nav id="topNavBar">
+            <div id="logo">
+                <a href="../home.html">
+                    <img src="../../shared/images/logo.png" alt="Toki Toki Logo">
+                </a>
+            </div>
 
-    <p>Stock > Stock Details</p>
+            <div id="topMenu">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="../../shared/icons/icon_phone.svg" alt="Support Icon">
+                            <span>Support</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../../shared/icons/icon_notification.svg" alt="Notifications Icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../../shared/icons/icon_pfp.png" alt="Profile Icon">
+                            <span>Manager X</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../../shared/icons/icon_down.svg" alt="Dropdown Icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-    <div class="stock-info">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo9FJc3j285DgslhXvnrLxYO22o4xRACt6Ww&s" alt="Carrots">
-        <div class="details">
-            <strong>Item ID: 22</strong> <br>
-            Item: Carrots <br>
-            Quantity: 40 kg <br>
-            Expiration: 10-22-24 <br>
-            <div class="buttons">
-                <button class="btn red">Recipes Used</button>
+        <div class="container">
+            <div class="header">
+                <h2>Stock Details</h2>
+                <button class="btn" id="restockItemBtn">Restock Item</button>
             </div>
-        </div>
-    </div>
 
-    <div class="restock-log">
-        <h3>Restock Log</h3>
-        <div class="log-grid">
-            <div class="log-card">
-                <strong>Order ID: 1356</strong> <br>
-                Supplier: X <br>
-                Quantity: 50 kg <br>
-                Date Delivered: 10-20-2024 <br>
-                Date Expiration: 10-30-2024
-            </div>
-            <div class="log-card">
-                <strong>Order ID: 1355</strong> <br>
-                Supplier: X <br>
-                Quantity: 50 kg <br>
-                Date Delivered: 10-20-2024 <br>
-                Date Expiration: 10-30-2024
-            </div>
-            <div class="log-card">
-                <strong>Order ID: 1356</strong> <br>
-                Supplier: X <br>
-                Quantity: 50 kg <br>
-                Date Delivered: 10-20-2024 <br>
-                Date Expiration: 10-30-2024
-            </div>
-            <div class="log-card">
-                <strong>Order ID: 1356</strong> <br>
-                Supplier: X <br>
-                Quantity: 50 kg <br>
-                Date Delivered: 10-20-2024 <br>
-                Date Expiration: 10-30-2024
-            </div>
-            <div class="log-card">
-                <strong>Order ID: 1355</strong> <br>
-                Supplier: X <br>
-                Quantity: 50 kg <br>
-                Date Delivered: 10-20-2024 <br>
-                Date Expiration: 10-30-
-            </div>
-            <div class="log-card">
-                    <strong>Order ID: 1355</strong> <br>
-                    Supplier: X <br>
-                    Quantity: 50 kg <br>
-                    Date Delivered: 10-20-2024 <br>
-                    Date Expiration: 10-30-
+            <p>Stock > Stock Details</p>
+
+            <div class="stock-info">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo9FJc3j285DgslhXvnrLxYO22o4xRACt6Ww&s" alt="Carrots">
+                <div class="details">
+                    <strong>Item ID: 22</strong> <br>
+                    Item: Carrots <br>
+                    Quantity: 40 kg <br>
+                    Expiration: 10-22-24 <br>
                 </div>
-                <div class="log-card">
+            </div>
+
+            <div class="restock-log">
+                <h3>Restock Log</h3>
+                <div class="log-grid">
+                    <div class="log-card">
+                        <strong>Order ID: 1356</strong> <br>
+                        Supplier: X <br>
+                        Quantity: 50 kg <br>
+                        Date Delivered: 10-20-2024 <br>
+                        Date Expiration: 10-30-2024
+                    </div>
+                    <div class="log-card">
                         <strong>Order ID: 1355</strong> <br>
                         Supplier: X <br>
                         Quantity: 50 kg <br>
@@ -149,15 +120,52 @@
                         Date Expiration: 10-30-2024
                     </div>
                     <div class="log-card">
-                            <strong>Order ID: 1355</strong> <br>
-                            Supplier: X <br>
-                            Quantity: 50 kg <br>
-                            Date Delivered: 10-20-2024 <br>
-                            Date Expiration: 10-30-2024
+                        <strong>Order ID: 1356</strong> <br>
+                        Supplier: X <br>
+                        Quantity: 50 kg <br>
+                        Date Delivered: 10-20-2024 <br>
+                        Date Expiration: 10-30-2024
+                    </div>
+                    <div class="log-card">
+                        <strong>Order ID: 1356</strong> <br>
+                        Supplier: X <br>
+                        Quantity: 50 kg <br>
+                        Date Delivered: 10-20-2024 <br>
+                        Date Expiration: 10-30-2024
+                    </div>
+                    <div class="log-card">
+                        <strong>Order ID: 1355</strong> <br>
+                        Supplier: X <br>
+                        Quantity: 50 kg <br>
+                        Date Delivered: 10-20-2024 <br>
+                        Date Expiration: 10-30-2024
+                    </div>
+                    <div class="log-card">
+                        <strong>Order ID: 1355</strong> <br>
+                        Supplier: X <br>
+                        Quantity: 50 kg <br>
+                        Date Delivered: 10-20-2024 <br>
+                        Date Expiration: 10-30-2024
+                    </div>
+                    <div class="log-card">
+                        <strong>Order ID: 1355</strong> <br>
+                        Supplier: X <br>
+                        Quantity: 50 kg <br>
+                        Date Delivered: 10-20-2024 <br>
+                        Date Expiration: 10-30-2024
+                    </div>
+                    <div class="log-card">
+                        <strong>Order ID: 1355</strong> <br>
+                        Supplier: X <br>
+                        Quantity: 50 kg <br>
+                        Date Delivered: 10-20-2024 <br>
+                        Date Expiration: 10-30-2024
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-</body>
+    <script src="../../shared/js/popup.js"></script>
 </html>
+
